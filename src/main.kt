@@ -1,11 +1,13 @@
 import java.util.Scanner
+import java.util.Calendar
 
 /*
- * A program to help demonstrate Kotlin basics
+ * A program to help demonstrate a lot of Kotlin basics
  */
 
 fun main(args: Array<String>) {
     val scanner = Scanner(System.`in`)
+    var usedArgs = false
 
     println("Hello, World!")
 
@@ -15,7 +17,10 @@ fun main(args: Array<String>) {
         for (value in args) {
             println(value)
         }
-    } else {
+        usedArgs = true
+    }
+
+    if (!usedArgs) {
         println("No arguments passed to main")
     }
 
@@ -27,6 +32,12 @@ fun main(args: Array<String>) {
     val buddy = KotlinBuddy(buddyName)
     buddy.welcome()
 
+    mathStuff()
+
+    print("What year were you born?: ")
+    val birthYear = scanner.nextInt()
+    val age: Int = getAge(birthYear)
+    println("\nYou must be $age years old")
 }
 
 class KotlinBuddy constructor(name: String) {
@@ -39,4 +50,25 @@ class KotlinBuddy constructor(name: String) {
         println("Welcome to the Kotlin helper :)")
     }
 
+}
+
+fun mathStuff() {
+    // demonstrate different ways to represent numerical types
+    // you can be explicit with how you want to declare a long
+    val scanner = Scanner(System.`in`)
+    val myLong: Long = 100_000_000
+    // or not
+    val bezosNetWorthProbably = 100_000_000_000L
+    println("Longs are cool! $bezosNetWorthProbably\t $myLong")
+
+    print("Enter some long: ")
+    val userLongInput = scanner.nextLong()
+    println("\nYour long: $userLongInput")
+}
+
+// you can create a return type for a function
+fun getAge(birthYear: Int): Int {
+    val age: Int = Calendar.getInstance().get(Calendar.YEAR) - birthYear
+    println("Birth year: $birthYear")
+    return age
 }
