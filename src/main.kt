@@ -32,12 +32,16 @@ fun main(args: Array<String>) {
     val buddy = KotlinBuddy(buddyName)
     buddy.welcome()
 
+    // dec 5: types, func return types
     mathStuff()
 
     print("What year were you born?: ")
     val birthYear = scanner.nextInt()
     val age: Int = getAge(birthYear)
     println("\nYou must be $age years old")
+
+    // dec 6: ranges
+    showRanges()
 }
 
 class KotlinBuddy constructor(name: String) {
@@ -52,9 +56,9 @@ class KotlinBuddy constructor(name: String) {
 
 }
 
+// demonstrate different ways to represent numerical types
+// you can be explicit with how you want to declare a long
 fun mathStuff() {
-    // demonstrate different ways to represent numerical types
-    // you can be explicit with how you want to declare a long
     val scanner = Scanner(System.`in`)
     val myLong: Long = 100_000_000
     // or not
@@ -71,4 +75,12 @@ fun getAge(birthYear: Int): Int {
     val age: Int = Calendar.getInstance().get(Calendar.YEAR) - birthYear
     println("Birth year: $birthYear")
     return age
+}
+
+// Dec 6, I learned about ranges and how you can even use them with strings
+fun showRanges() {
+    var inRange = 'b' in 'a'..'c'
+    println("\'b\' in \'a\'..\'c\': $inRange")
+    inRange = 'z' in 'a'..'y'
+    println("\'z\' in \'a\'..\'y\': $inRange")
 }
