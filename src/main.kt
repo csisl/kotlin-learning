@@ -42,6 +42,15 @@ fun main(args: Array<String>) {
 
     // dec 6: ranges
     showRanges()
+
+    // dec 21: companion object
+    // Call a function of a class without instantiating it
+    CompanionTest.sayHi()
+    val doesThisWork = CompanionTest // not an instance
+    doesThisWork.sayHi()
+
+    val actualInstance = CompanionTest()
+    actualInstance.needInstance()
 }
 
 class KotlinBuddy constructor(name: String) {
@@ -83,4 +92,16 @@ fun showRanges() {
     println("\'b\' in \'a\'..\'c\': $inRange")
     inRange = 'z' in 'a'..'y'
     println("\'z\' in \'a\'..\'y\': $inRange")
+}
+
+class CompanionTest() {
+    companion object CompanionBuddy {
+        fun sayHi() {
+            println("Hello from companion buddy!")
+        }
+    }
+    fun needInstance() {
+        // a function that needs an instance of the class to be run
+        println("You need an instance to run me!")
+    }
 }
