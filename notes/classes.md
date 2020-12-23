@@ -78,7 +78,7 @@ class OtherClass(): MyClass {
 }
 ```
 
-To prohit re-overriding, use the `final` keyword:
+To prohibit re-overriding, use the `final` keyword:
 
 ```
 final override fun canOverride()
