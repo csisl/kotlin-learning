@@ -127,3 +127,8 @@ compInstance.needsInstance()
 
 `CompanionBuddy` does not require an instance of `CompanionTest`
 `needsInstance` *does* require an instance of `CompanionTest`
+
+## Dec 23 - classes
+
+A lot to learn about classes inside of the [classes.md](classes.md)
+As I learn, I'm making the [Punch Buggy game](https://github.com/csisl/PunchBuggy-Kotlin)
