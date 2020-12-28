@@ -50,8 +50,51 @@ Vehicle is an abstract class (at least currently) declared with
 [open](https://kotlinlang.org/docs/reference/classes.html#inheritance) to say that it's
 open for inheritance.  
 
-Initially, all of the methods in `Vehicle` were abstract. 
+Initially, all of the methods in `Vehicle` were abstract and were being implemented inside
+of the base class that was inheriting it. However, after going back over
+the `open` keyword in Kotlin, I realized you can actually implement code inside of the
+abstract class and then just have the subclass call those methods with that logic. `open`
+provides the opportunity to override the method. I don't see myself changing the code
+for incrementing the count of a vehicle so I put some code and logic into the `Vehicle`
+class.  
 
-## Player - inherits from Vehicle
+### companion object
+
+I needed a static member inside of the `Vehicle` object, so I made a companion object which
+is described inside of the [til.md](https://github.com/csisl/kotlin-learning/blob/master/notes/til.md)
+file in this repo. I should be able to see the available colors of a vehicle without needing
+and instance of a vehicle. Inside of the companion object `Colors` is an array of strings,
+each a possible color of the vehicle:
+
+```
+    companion object Colors {
+        val colors: Array<String> = arrayOf("red", "orange", "yellow", "green", "blue",
+            "purple", "pink", "black", "white", "silver")
+    }
+```
+
+To get the colors array, I just need to call `Vehicle.colors`. Iterating through the array is
+easy enough, following the same `forEach` logic metioned [above](###iterable-/-forEach).  
+
 
 ### Expression function
+
+For functions that only return something in Kotlin, you can set that method equal to what
+it should return. 
+
+```
+    fun getCount(): Int = count // the same as returning count 
+```
+
+## PunchBuggy - inherits from Vehicle
+
+Initially, the punch buggy code had a lot of logic. There were methods that were
+overriding the abstract methods that `Vehicle` defined. However, currently, it is
+completely empty, just using the logic from the `Vehicle` superclass.  
+
+## Player
+
+A player can be made by passing a string to the constructor that is the username. Each
+player has a `muatable list` of punch buggies and a `score` object. Pretty much everything
+done in this class has been talked about above (mutable lists, forEach, constructors).  
+
