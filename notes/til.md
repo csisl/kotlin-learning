@@ -137,3 +137,15 @@ As I learn, I'm making the [Punch Buggy game](https://github.com/csisl/PunchBugg
 ### ? 
 
 The elusive question mark...
+
+## Dec 31 
+
+### when 
+
+You can use `when` like a `switch` statement.
+
+```
+when (age) {
+    18 -> println("Voting age!")
+}
+```
