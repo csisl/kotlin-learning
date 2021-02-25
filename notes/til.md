@@ -136,7 +136,19 @@ As I learn, I'm making the [Punch Buggy game](https://github.com/csisl/PunchBugg
 
 ### ? 
 
-The elusive question mark...
+The elusive question mark...  
+
+This can be used to say a type can be null.
+
+```
+// notNullable can never be null, no need for null checks
+var notNullable: Foo = Foo()
+
+// can be null, need to do null checks
+var nullable: Bar? = Bar()
+```
+
+Foo objects will never be null, but Bar objects can be null. 
 
 ## Dec 31 
 
