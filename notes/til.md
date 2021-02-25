@@ -163,3 +163,30 @@ when (age) {
     18 -> println("Voting age!")
 }
 ```
+
+## Feb 25
+
+### NULL checks
+
+When you have a nullable object ( `?` ) or methods that can
+return null, you can use `?` to make calls to them:
+
+```
+var foo: Foo? = Foo()
+...
+// sampleCall will either return Foo or null
+sampleCall?.getFoo()
+```
+
+If you are certain that the value will not be null, use `!!`
+in the call:
+
+```
+sampleCall!!.getFoo()
+```
+
+This asserts that sampleCall will never return null even though
+the object it returns has the possibility of being null. 
+
+If it is null a null pointer exception will be thrown.
+
