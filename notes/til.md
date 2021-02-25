@@ -150,6 +150,8 @@ var nullable: Bar? = Bar()
 
 Foo objects will never be null, but Bar objects can be null. 
 
+Awesome [site](https://agrawalsuneet.github.io/blogs/safe-calls-vs-null-checks-in-kotlin/)
+
 ## Dec 31 
 
 ### when 
